@@ -23,6 +23,9 @@ body{
   color: white;
   cursor: pointer;
 }
+.btn-add:hover {
+  background-color: rgb(255, 0, 0);
+}
 .addContainer{
   position: absolute;
   background-color: rgba(255, 255, 255, 0.701);

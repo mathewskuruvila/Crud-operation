@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <button className="btn btn-add" onClick={()=>setAddSection(true)}>Add</button>
+        <button className="btn btn-add" onClick={()=>setAddSection(true)}>Add information</button>
         {addSection && (
           <div className="addContainer">
             <form onSubmit={handleSubmit}>
