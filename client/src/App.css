@@ -1,0 +1,44 @@
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: #f5f6ff;
+}
+.container{
+  padding:10px;
+  /* background-color: aqua; */
+  max-width: 700px;
+  margin: auto;
+  margin: 20px auto;
+}
+.btn{
+  border:none;
+  padding: 7px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+.btn-add{
+  background: #0084ff;
+  color: white;
+}
+.addContainer{
+  position: absolute;
+  background-color: rgba(31, 163, 141, 0.701);
+  left: 0;
+  right: 0;
+  bottom:0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.addContainer form{
+  width: 420px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0,2);
+}
