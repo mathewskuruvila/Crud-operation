@@ -2,6 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
+import axios from "axios";
+
+axios.defaults.baseURL ="http://localhost:8080/";
 function App() {
   const [addSection, setAddSection] = useState(false);
   const [formData,setFormData] = useState({
@@ -18,9 +21,14 @@ function App() {
       }
     })
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(formData)
+    const data = await axios.post("/create",formData)
+    console.log(data);
+    if(data.data.success){
+      setAddSection(false)
+      alert(data.data.message)
+    }
   };
   return (
     <>
