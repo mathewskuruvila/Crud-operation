@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { MdClose } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 axios.defaults.baseURL ="http://localhost:8080/";
@@ -12,6 +12,7 @@ function App() {
     email:"",
     mobile:"",
   })
+  const [dataList,setDataList]=useState([])
   const handleOnchange = (e)=>{
     const {value,name} = e.target
     setFormData((preve)=>{
@@ -29,7 +30,18 @@ function App() {
       setAddSection(false)
       alert(data.data.message)
     }
-  };
+  }
+  const getFetchData = async()=>{
+    const data = await axios.get("/")
+    console.log(data)
+    if(data.data.success){
+      setDataList(data.data.data)
+    }
+  }
+  useEffect(()=>{
+    getFetchData()
+  },[])
+  console.log(dataList)
   return (
     <>
       <div className="container">
@@ -54,5 +66,16 @@ function App() {
     </>
   );
 }
-
+<div className="tableContainer">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th></th>
+      </tr>
+    </thead>
+  </table>
+</div>
 export default App;
