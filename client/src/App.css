@@ -74,3 +74,19 @@ body{
   border:1px solid #000;
   cursor: pointer;
 }
+.tableContainer {
+  margin-top:50px;
+}
+.tableContainer table thead tr{
+  background-color: #7782e6;
+  
+}
+.tableContainer table thead tr th,
+.tableContainer table tbody tr td{
+  min-width :200px;
+  padding:7px;
+  text-align: center;
+}
+.tableContainer table tbody tr td{
+  border-bottom: 1px solid;
+}

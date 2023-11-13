@@ -61,10 +61,7 @@ function App() {
               <button className="btn">Submit</button>
             </form>
           </div>
-        )}
-      </div>
-    </>
-  );
+  )
 }
 <div className="tableContainer">
   <table>
@@ -76,6 +73,24 @@ function App() {
         <th></th>
       </tr>
     </thead>
+    <tbody>
+      {
+        dataList.map((e1)=>{
+          return(
+            <tr>
+              <td>{e1.name}</td>
+              <td>{e1.email}</td>
+              <td>{e1.mobile}</td>
+              <td> </td>
+            </tr>
+          )
+        })
+      }
+    </tbody>
   </table>
 </div>
+</div>
+</>
+);
+}
 export default App;
