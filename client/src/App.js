@@ -38,6 +38,11 @@ function App() {
       setAddSection(false)
       alert(data.data.message)
       getFetchData()
+      setFormData({
+        name:"",
+        email:"",
+        mobile: ""
+      })
     }
   }
   const getFetchData = async()=>{
@@ -60,10 +65,11 @@ function App() {
   }
 const handleUpdate =async(e)=>{
   e.preventDefault()
-  const data = await axios.delete("/update",formDataEdit)
+  const data = await axios.put("/update",formDataEdit)
   if(data.data.success){
     getFetchData()
     alert (data .data.message)
+    setEditSection(false)
   }
 }
 const handleEditOnChange = async(e)=>{
