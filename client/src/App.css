@@ -7,8 +7,7 @@ body{
 .container{
   padding:10px;
   /* background-color: aqua; */
-  max-width: 700px;
-  margin: auto;
+  max-width: fit-content;
   margin: 20px auto;
 }
 .btn{
@@ -28,7 +27,7 @@ body{
 }
 .addContainer{
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.701);
+  background-color: rgba(80, 15, 15, 0.701);
   left: 0;
   right: 0;
   bottom:0;
@@ -40,7 +39,7 @@ body{
 }
 .addContainer form{
   width: 420px;
-  background-color: rgb(0, 225, 255);
+  background-color: rgb(77, 194, 209);
   display: flex;
   flex-direction: column;
   padding: 50px 40px;
@@ -76,6 +75,11 @@ body{
 }
 .tableContainer {
   margin-top:50px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0,2);
+  border-radius: 5px;
+}
+.tableContainer table{
+  
 }
 .tableContainer table thead tr{
   background-color: #7782e6;
@@ -87,6 +91,22 @@ body{
   padding:7px;
   text-align: center;
 }
+.tableContainer table tbody tr{
+  border : 1px solid #c9c5c2;
+}
 .tableContainer table tbody tr td{
   border-bottom: 1px solid;
+}
+.btn-edit,
+.btn-delete{
+  font-size: 16px;
+  padding: 5px 10px;
+  margin:0px 10px;
+}
+.btn-edit{
+  background-color: yellow;
+}
+.btn-delete{
+background-color: red;
+color: white;
 }

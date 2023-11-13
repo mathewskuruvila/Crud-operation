@@ -41,7 +41,15 @@ function App() {
   useEffect(()=>{
     getFetchData()
   },[])
-  console.log(dataList)
+  const handleDelete = async(id)=>{
+    const data = await axios.delete("/delete/"+id)
+    
+    if(data.data.success){
+      getFetchData()
+      alert (data .data.message)
+    }
+  }
+
   return (
     <>
       <div className="container">
@@ -74,17 +82,23 @@ function App() {
       </tr>
     </thead>
     <tbody>
-      {
+      {dataList [0] ? (
         dataList.map((e1)=>{
           return(
             <tr>
               <td>{e1.name}</td>
               <td>{e1.email}</td>
               <td>{e1.mobile}</td>
-              <td> </td>
+              <td>
+                <button className="btn btn-edit">Edit</button>
+                <button className="btn btn-delete" onClick={()=>handleDelete(e1. _id)}>Delete</button>
+                 </td>
             </tr>
           )
-        })
+        }))
+        : (
+          <p style={{textAlign:"center"}}>No data</p>
+        )
       }
     </tbody>
   </table>
